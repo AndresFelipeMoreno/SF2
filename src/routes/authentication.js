@@ -2,32 +2,31 @@ const express = require('express');
 const router = express.Router();
 const db = require('../database');
 
+
+
 const passport = require('passport');
 
 router.get('/signin', (req, res) => {
   res.render('auth/signin');
   });
 
-router.post('/signin', (req, res) => {
-  console.log(req.body);
-  res.send("sesion recibido")
+router.post('/signin', (req, res, next) => {
+  passport.authenticate('local.signin',{
+    successRedirect:'/profile',
+    failureRedirect :'/signin',
+    failureFlash: true
+  })(req,res,next);
 });
 
 router.get('/signup', (req, res) =>{
   res.render('auth/signup');
 });
 
-router.post('/signup', async (req,res) =>{
-  const {fullname, email, password, confirmation,phone, department, town} = req.body;
-  const newUser = {
-    fullname, email, password,phone, department, town
-  }
-  await db.query("INSERT INTO users set ?", [newUser], function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-  });
-  res.redirect("/login");
-});
+router.post('/signup', passport.authenticate('local.signup', {
+  successRedirect: '/profile',
+  failureRedirect: '/signup',
+  failureFlash: true
+}));
 
 
 router.get('/profile', (req,res) =>{

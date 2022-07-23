@@ -45,6 +45,7 @@ app.use(passport.session());
 //variables globales
 
 app.use((req,rest,next) => {  //toma los datos que inf¡gresa el usuario, lo que responde el servidor y continua ejecutando con el nex
+    app.locals.success = req.flash('success');
     next();
 })
 

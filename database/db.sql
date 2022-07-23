@@ -12,6 +12,12 @@ CREATE TABLE users(
     town VARCHAR(60) NOT NULL
 );
 
+ALTER TABLE users
+    ADD PRIMARY KEY (idUser);
+
+ALTER TABLE users
+    MODIFY idUser INT(11) NOT NULL AUTO_INCREMENT;
+
 CREATE TABLE seed(
     idSeed INT(11) NOT NULL,
     name VARCHAR(60) NOT NULL,
@@ -24,11 +30,8 @@ CREATE TABLE seed(
     CONSTRAINT fk_user FOREIGN KEY (idUser) REFERENCES users(idUser)
 );
 
-ALTER TABLE users
-    ADD PRIMARY KEY (idUser);
 
-ALTER TABLE users
-    MODIFY idUser INT(11) NOT NULL AUTO_INCREMENT;
+
 
 ALTER TABLE seed
     ADD PRIMARY KEY (idSeed);
