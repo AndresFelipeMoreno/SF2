@@ -30,7 +30,7 @@ app.set('view engine', '.hbs');
 //middleware --> cada vez que un cliente envia una peticion al servidor
 
 app.use(session({
-    secret: 'faztmysqlnodemysql',
+    secret: 'proyectoSF2',
     resave: false,
     saveUninitialized: false,
     store: new MySQLStore(database)
@@ -46,6 +46,8 @@ app.use(passport.session());
 
 app.use((req,rest,next) => {  //toma los datos que inf¡gresa el usuario, lo que responde el servidor y continua ejecutando con el nex
     app.locals.success = req.flash('success');
+    app.locals.message = req.flash('message');
+    app.locals.user = req.user;
     next();
 })
 

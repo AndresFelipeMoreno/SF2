@@ -17,31 +17,31 @@
                     </figure>
                     <form action="/signup" method="POST">
                       <div class="form-group">
-                        <input type="type" name="fullname" placeholder="Nombre Completo" class="form-control" autofocus>
+                        <input type="text" name="fullname" placeholder="Nombre Completo" class="form-control" autofocus required>
                       </div>
 
                       <div class="form-group">
-                        <input type="type" name="email" placeholder="Correo electronico" class="form-control">
+                        <input type="email" name="email" placeholder="Correo electronico" class="form-control" required oninvalid="setCustomValidity('Ingrese un formato de correo valido')" oninput="setCustomValidity('')">
                       </div>
 
                       <div class="form-group">
-                        <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                        <input type="password" name="password" placeholder="Contraseña" class="form-control" pattern="[A-Za-z0-9]*[0-9][A-Za-z0-9]*" required oninvalid="setCustomValidity('Solo valores alfanumericos')" oninput="setCustomValidity('')">
                       </div>
 
                       <div class="form-group">
-                        <input type="password" name="confirmation" placeholder="Confirme su Contraseña" class="form-control">
+                        <input type="password" name="confirmation" placeholder="Confirme su Contraseña" class="form-control" pattern="[A-Za-z0-9]*[0-9][A-Za-z0-9]*" required>
                       </div>
 
                       <div class="form-group">
-                        <input type="type" name="phone" placeholder="Telefono" class="form-control">
+                        <input type="text" name="phone" placeholder="Telefono" class="form-control" pattern= "^[0-9,$]*$" required oninvalid="setCustomValidity('Solo valores numericos')" oninput="setCustomValidity('')">
                       </div>
 
                       <div class="form-group">
-                        <input type="type" name="department" placeholder="Departamento" class="form-control">
+                        <input type="text" name="department" placeholder="Departamento" class="form-control" required>
                       </div>
 
                       <div class="form-group">
-                        <input type="type" name="town" placeholder="Municipio" class="form-control">
+                        <input type="text" name="town" placeholder="Municipio" class="form-control" required>
                       </div>
 
                       <div class="form-group">
