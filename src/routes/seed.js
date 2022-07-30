@@ -7,8 +7,16 @@ router.get('/addseed', (req, res) => {
     res.render('seeds/addseed');
 });
 
-router.post('/add', (req, res) => {
-    console.log(req.body);
+router.post('/addseed', async (req, res) => {
+    const { name , description, quantityAvailable, priceKg, cultivationTown } = req.body;
+    const newSeed = {
+        name,
+        description,
+        quantityAvailable,
+        priceKg,
+        cultivationTown
+    };
+    await pool.query('INSERT INTO seed set ?', [newSeed]);
     res.send('received')
 });
 
