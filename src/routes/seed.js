@@ -17,7 +17,18 @@ router.post('/addseed', async (req, res) => {
         cultivationTown
     };
     await pool.query('INSERT INTO seed set ?', [newSeed]);
-    res.send('received')
+    res.redirect('/seeds');
 });
+
+router.get('/', async (req,res) => {
+    const seeds = await pool.query('SELECT * FROM seed')
+    res.render('seeds/list', {seeds});
+});
+
+router.get('/delete/:idSeed', async (req,res) => {
+    const {idSeed} = req.params;
+    await pool.query('DELETE FROM seed WHERE idSeed = ?', [idSeed]);
+    res.redirect('/seeds');
+})
 
 module.exports = router;

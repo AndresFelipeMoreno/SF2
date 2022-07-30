@@ -1,0 +1,46 @@
+<div class="container-fluid">
+        <div class="row">
+        {{#each seeds}}
+        <div class="col-md-3">
+            <div class="card-body mt-5 ml-5">
+                <div class="media-left canBeDelited">
+                    <figure class="avatar">
+                        <img src="/img/imagen.png" alt="Image" class="canBeDelited" width="100" />
+                    </figure>
+                </div>
+                <div class="media-content canBeDelited">
+                    <p class="canBeDelited">
+                        <span class="title canBeDelited"><b>Nombre:</b>
+                            {{name}}
+                        </span>
+                    </p>
+                    <p class="canBeDelited">
+                        <span class="title canBeDelited has-text-black is-6"><b>Precio (Kg):</b>
+                            {{priceKg}}
+                        </span>
+                    </p>
+                    <p class="canBeDelited">
+                        <span class="title canBeDelited has-text-black is-6"><b>Cantidad disponible (Kg):</b>
+                        {{quantityAvailable}}
+                        </span>
+                    </p>
+                    <p class="canBeDelited">
+                        <span class="title canBeDelited has-text-black is-6"><b>Descripcion:</b>
+                        {{description}}
+                        </span>
+                    </p>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="/seeds/delete/{{idSeed}}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="col-md-4 mx auto">
+            <div class="card card-body text-center">
+                <p>Aun no has publicados productos</p>
+                <a href="/seeds/addseed">Agrega Uno</a>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
