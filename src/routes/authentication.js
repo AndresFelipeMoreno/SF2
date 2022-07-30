@@ -31,6 +31,7 @@ router.get('/profile', isLoggedIn, (req,res) =>{
   res.render('profile');
 });
 
+
 router.get("/logout", (req, res, next) => {
   req.logOut(req.user, err => {
       if(err) return next(err);

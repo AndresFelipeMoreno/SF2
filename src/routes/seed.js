@@ -7,4 +7,9 @@ router.get('/addseed', (req, res) => {
     res.render('seeds/addseed');
 });
 
+router.post('/add', (req, res) => {
+    console.log(req.body);
+    res.send('received')
+});
+
 module.exports = router;
