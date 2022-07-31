@@ -29,16 +29,16 @@
                         {{description}}
                         </span>
                     </p>
-                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="/seeds/edit/{{idSeed}}" class="btn btn-primary">Editar</a>
                     <a href="/seeds/delete/{{idSeed}}" class="btn btn-danger">Eliminar</a>
                 </div>
             </div>
         </div>
     {{else}}
-        <div class="col-md-4 mx auto">
+         <div class="col-md-4 mx-auto mt-3">
             <div class="card card-body text-center">
-                <p>Aun no has publicados productos</p>
-                <a href="/seeds/addseed">Agrega Uno</a>
+                <p>Aun no has publicado productos</p>
+                <a href="/seeds/addseed">Publica uno!</a>
             </div>
         </div>
     {{/each}}

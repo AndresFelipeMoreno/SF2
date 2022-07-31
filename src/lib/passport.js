@@ -27,7 +27,6 @@ passport.use('local.signin', new LocalStrategy({
 passport.use('local.signup', new LocalStrategy({
     usernameField: 'fullname',
     passwordField: 'password',
-
     passReqToCallback: true
 
 }, async (req, fullname, password, done) => {
