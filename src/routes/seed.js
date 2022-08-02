@@ -54,6 +54,11 @@ router.post('/edit/:idSeed', isLoggedIn,  async (req, res) => {
     await pool.query('UPDATE seed SET ? WHERE idSeed = ?', [newSeed, idSeed]);
     req.flash('success','Producto actualizado correctamente');
     res.redirect('/seeds');
-})
+});
+
+router.get('/singleItem/:idSeed', async (req, res) => {
+    const { idSeed } = req.params;
+    res.render('seeds/singleItem')
+ })
 
 module.exports = router;
