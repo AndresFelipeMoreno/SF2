@@ -2,13 +2,13 @@
         <div class="row">
         {{#each seeds}}
         <div class="col-md-3">
-            <div class="card-body mt-5 ml-5">
-                <div class="media-left canBeDelited">
+            <div class="card mt-5 ml-5 text-center mt-5 ml-5">
+                <div class="media-left canBeDelited mt-5">
                     <figure class="avatar">
                         <img src="/img/fondo3.jpg" alt="Image" class="canBeDelited" width="150" height="100"  align="center"/>
                     </figure>
                 </div>
-                <div class="media-content canBeDelited">
+                <div class="media-content canBeDelited ml-5 mr-5">
                     <p class="canBeDelited">
                         <span class="title canBeDelited"><b>Nombre:</b>
                             {{name}}
@@ -29,8 +29,8 @@
                         {{description}}
                         </span>
                     </p>
-                    <a href="/seeds/edit/{{idSeed}}" class="btn btn-primary">Editar</a>
-                    <a href="/seeds/delete/{{idSeed}}" class="btn btn-danger">Eliminar</a>
+                    <a href="/seeds/edit/{{idSeed}}" class="btn btn-primary mb-3">Editar</a>
+                    <a href="/seeds/delete/{{idSeed}}" class="btn btn-danger mb-3">Eliminar</a>
                 </div>
             </div>
         </div>

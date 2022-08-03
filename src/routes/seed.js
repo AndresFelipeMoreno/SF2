@@ -58,7 +58,8 @@ router.post('/edit/:idSeed', isLoggedIn,  async (req, res) => {
 
 router.get('/singleItem/:idSeed', async (req, res) => {
     const { idSeed } = req.params;
-    res.render('seeds/singleItem')
- })
+    const sellers = await pool.query('SELECT * FROM users INNER JOIN seed ON users.idUser = seed.idUser WHERE idSeed = ?', [idSeed]);
+    res.render('seeds/singleItem',{seller: sellers[0]});
+});
 
 module.exports = router;
