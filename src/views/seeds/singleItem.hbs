@@ -1,24 +1,20 @@
-<div class="hero-body p-5">
-  <div class="container has-text-centered">
-    <div class="columns is-vcentered">
-      <div class="column is-5">
-        <figure class="image shadow brighten ">
-          <img id="img" src="/img/fondo3.jpg" alt="Description" width="500"/>
-        </figure>
-      </div>
-      <div class="column is-6 is-offset-1">
-        <p id="name" class="title is-2">{{seller.name}}</p>
-        <h2 id="quantity" class="subtitle is-4">{{seller.quantityAvailable}}</h2>
-        <h2 id="price" class="subtitle is-4">{{seller.priceKg}}</h2>
-        <h2 id="cultivationTown"  value=""class="subtitle is-4">{{seller.cultivationTown}}</h2>
-        <h2 id="description" class="subtitle is-4">{{seller.description}}</h2>
-        <h2 id="fullname" class="subtitle is-4">{{seller.fullname}}</h2>
-        <h2 id="email" class="subtitle is-4">{{seller.email}}</h2>
-        <h2 id="phone" class="subtitle is-4">{{seller.phone}}</h2>
-        <h2 id="department" class="subtitle is-4">{{seller.department}}</h2>
-        <h2 id="town" class="subtitle is-4">{{seller.town}}</h2>
-        <br />
-      </div>
+<div class="container-fluid">
+  <div class="row mt-5" style="gap: 100px;">
+    <div class="col offset-md-1 " style="margin-top: 90px;">
+      <img src="/img/fondo3.jpg" alt="" width="500">
+    </div>
+    <div class="col align-items-center">
+      <h2 id="quantity" class="subtitle is-4">Datos de la semilla</h2>
+      <p id="name" class="title is-2"><b>Producto:</b> {{seller.name}}</p>
+        <p id="quantity" class="subtitle is-4"> <b>Cantidad disponible:</b> {{seller.quantityAvailable}}</p>
+        <p id="price" class="subtitle is-4"> <b>Precio por Kg:</b> {{seller.priceKg}}</p>
+        <p id="cultivationTown"  value=""class="subtitle is-4"> <b>Lugar de Cultivacion:</b> {{seller.cultivationTown}}</p>
+        <p id="description" class="subtitle is-4"> <b>Descripcion:</b> {{seller.description}}</p>
+        <h2 id="quantity" class="subtitle is-4 " style="margin-top:30px ;">Datos del vendedor</h2>
+        <p id="fullname" class="subtitle is-4"> <b>Nombre:</b> {{seller.fullname}}</p>
+        <p id="email" class="subtitle is-4"> <b>Correo:</b> {{seller.email}}</p>
+        <p id="phone" class="subtitle is-4"> <b>Celular:</b> {{seller.phone}}</p>
+        <p id="department" class="subtitle is-4"> <b>Residencia:</b>  {{seller.town}}-{{seller.department}}</p>
     </div>
   </div>
 </div>

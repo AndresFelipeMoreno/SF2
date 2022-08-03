@@ -13,6 +13,7 @@ const {database} = require('./keys')
 
 const app = express();
 require('./lib/passport');
+app.use(express.static('public'))
 
 //configuraciones
 
