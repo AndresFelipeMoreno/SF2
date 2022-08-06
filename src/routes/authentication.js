@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../database');
 const passport = require('passport');
 const {isLoggedIn, isNotLoggedIn} = require('../lib/auth');
+const { query } = require('express');
 
 
 router.get('/signin', isNotLoggedIn, (req, res) => {
@@ -38,6 +39,11 @@ router.get("/logout", (req, res, next) => {
       if(err) return next(err);
       res.redirect("/profile");
   });
+});
+
+router.get('/search', (req,res) =>{
+
+  res.render('auth/search');
 });
 
 module.exports = router;
