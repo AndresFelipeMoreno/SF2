@@ -10,6 +10,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         {{#if user}}
+        <form action="/searchLog" method="GET">
+          <div id="search" class="input-group" style="width: 100%;">
+            <input name="name" class="inputSearch" placeholder="Buscar Semilla" />
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+        </form>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -28,6 +36,14 @@
           <a class="nav-link" href="/logout">Cerrar sesion</a>
         </li>
         {{else}}
+        <form action="/search" method="GET">
+          <div id="search" class="input-group" style="width: 100%;">
+            <input name="name" class="inputSearch" placeholder="Buscar Semilla" />
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+        </form>
         <li class="nav-item">
           <a class="nav-link" href="/signin" style="margin-right: 20px;">Iniciar Sesion</a>
         </li>
